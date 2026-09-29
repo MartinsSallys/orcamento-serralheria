@@ -1,3 +1,8 @@
+import uuid
+
+meu_uuid = uuid.uuid4()
+
+
 class Client :
     def __init__(self, nome, telefone=None, observacao=None):
         if nome is None or nome.strip() == "":
@@ -5,5 +10,6 @@ class Client :
         self.nome = nome
         self.telefone = telefone
         self.observacao = observacao 
+        self.id = uuid.uuid4()  # Gera um ID único para cada instância de Client
         
         

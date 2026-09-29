@@ -25,3 +25,8 @@ def test_client_creation_with_whitespace_nome():
 def test_client_creation_with_none_nome():
     with pytest.raises(ValueError):
         Client(None)  # Nome None deve levantar ValueError
+
+def test_id ():
+    client1 = Client("joão", "123456789", "Observação de teste")
+    client2 = Client("maria", "987654321", "Outra observação")
+    assert client1.id != client2.id  # Verifica se os IDs são diferentes
