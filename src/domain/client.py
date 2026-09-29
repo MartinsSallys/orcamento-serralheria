@@ -4,6 +4,6 @@ class Client :
             raise ValueError("Nome não pode ser vazio")
         self.nome = nome
         self.telefone = telefone
-        self.observacao = observacao
+        self.observacao = observacao 
         
         
