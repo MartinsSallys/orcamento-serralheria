@@ -1,7 +1,5 @@
 import uuid
 
-meu_uuid = uuid.uuid4()
-
 
 class Client :
     def __init__(self, nome, telefone=None, observacao=None):
