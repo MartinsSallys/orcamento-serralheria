@@ -38,3 +38,24 @@ def test_material_creation_with_negative_price():
     with pytest.raises(ValueError):
         Material("Cobre", -10.0, "metros")  # Preço negativo deve levantar ValueError
 
+def test_two_materials_have_unique_ids():
+    material1 = Material("Aço", 100.0, "metros")
+    material2 = Material("Aço", 100.0, "metros")
+    assert material1.id != material2.id  # IDs devem ser únicos
+
+def test_material_creation_with_invalid_unidade():
+    with pytest.raises(ValueError):
+        Material("Aço", 100.0, "quilogramas")  # Unidade inválida deve levantar ValueError
+
+def test_creation_with_valid_unidades():
+    valid_unidades = ["milímetros"]
+    for unidade in valid_unidades:
+        material = Material("Aço", 100.0, unidade)
+        assert material.unidade == unidade  # Deve aceitar unidades válidas
+
+def test_creation_with_valida_unidades():
+    valid_unidades = ["centímetros"]
+    for unidade in valid_unidades:
+        material = Material("Aço", 100.0, unidade)
+        assert material.unidade == unidade  # Deve aceitar unidades válidas
+
